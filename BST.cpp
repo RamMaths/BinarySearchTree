@@ -69,6 +69,14 @@ int BST::SmallestKeyPrivate(node* ptr) {
   }
 }
 
+int BST::CalculateHeightPrivate(node* ptr) {
+  if(ptr == NULL) return -1;
+
+  int leftHeight = CalculateHeightPrivate(ptr->left);
+  int rightHeight = CalculateHeightPrivate(ptr->right);
+  return std::max(leftHeight, rightHeight) + 1;
+}
+
 // Public Section
 
 BST::BST() {
@@ -140,5 +148,14 @@ int BST::SmallestKey() {
   } else {
     string s = "The tree is empty";
     throw s;
+  }
+}
+
+int BST::CalculateHeight() {
+  if(root == NULL) {
+    string s = "The tree is empty";
+    throw s;
+  } else {
+    return BST::CalculateHeightPrivate(root);
   }
 }

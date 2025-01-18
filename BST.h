@@ -14,8 +14,9 @@ class BST {
     void PrintPreOrderPrivate(node* ptr);
     void PrintPostOrderPrivate(node* ptr);
     node* ReturnNodePrivate(int key, node* ptr);
-    int SmallestKeyPrivate(node* ptr); // -> O(n)
-                       //
+    int SmallestKeyPrivate(node* ptr);
+    int CalculateHeightPrivate(node* ptr);
+
   public:
     // constructor
     BST();
@@ -29,4 +30,5 @@ class BST {
     node* ReturnNode(int key); // -> O(n)
     void PrintChildren(int key); // -> O(n)
     int SmallestKey(); // -> O(n)
+    int CalculateHeight(); // -> O(n)
 };

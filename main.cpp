@@ -36,4 +36,12 @@ int main() {
   } catch(string err) {
     cout << err << "\n";
   }
+
+  // Printing the height of the tree
+
+  try {
+    cout << "Height of tree: " << myTree.CalculateHeight() << "\n"; 
+  } catch(string err) {
+    cout << err << "\n";
+  }
 }
